@@ -15,8 +15,8 @@ if (typeof require !== 'undefined') {
   require.extensions['.less'] = (file) => {}
 }
 
-module.exports = {
-  ...env,
+const config = {
+  env,
   ...withCSS({
     cssModules: true,
     cssLoaderOptions: {
@@ -32,3 +32,5 @@ module.exports = {
     ),
   }),
 }
+
+module.exports = config

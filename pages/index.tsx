@@ -1,7 +1,10 @@
+import { Typography } from 'antd'
 import Head from 'next/head'
 import React from 'react'
 
 import Example from '../features/starter/example'
+
+const { Title, Paragraph, Text } = Typography
 
 type StringMap = {
   [key: string]: string | undefined
@@ -19,6 +22,14 @@ const variables: StringMap = {
   AUTH0_CLIENT_SECRET,
 }
 
+const Code: React.FC = ({ children }) => <Text code>{children}</Text>
+const Item: React.FC<{ name: string }> = ({ name, children }) => (
+  <>
+    <Text>{name}:</Text>
+    <Code>{children}</Code>
+  </>
+)
+
 const Home: React.FC = () => {
   return (
     <div>
@@ -28,12 +39,17 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-        environment variables are:
-        <ul>
-          {Object.keys(variables).map((key) => (
-            <li key={key}>{`${key}: ${variables[key]}`}</li>
-          ))}
-        </ul>
+        <Title>LEXSTEP.com Authorization</Title>
+        <Paragraph>
+          environment variables are:
+          <ul>
+            {Object.keys(variables).map((key) => (
+              <li key={key}>
+                <Item name={key}>{`${variables[key]}`}</Item>
+              </li>
+            ))}
+          </ul>
+        </Paragraph>
         <Example />
       </main>
     </div>

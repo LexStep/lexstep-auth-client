@@ -1,21 +1,17 @@
 import { DatePicker, message } from 'antd'
+import { Moment } from 'moment'
 import React, { useState } from 'react'
 
-export interface ExampleProps {
-  enable?: boolean
-}
-const Example: React.FC<ExampleProps> = ({ enable }) => {
-  console.log(`enable is '${JSON.stringify(enable)}'`)
-
-  const [date, setDate] = useState()
-  const handleChange = (value) => {
-    console.log(`typeof value is ${typeof value}`)
-
+const Example: React.FC = () => {
+  const [date, setDate] = useState<Moment>()
+  const handleChange = (value?: Moment | null, _dateString?: string) => {
     void message.info(
       `Selected Date: ${value ? value.format('YYYY-MM-DD') : 'None'}`
     )
 
-    setDate(value)
+    if (value) {
+      setDate(value)
+    }
   }
 
   return (
