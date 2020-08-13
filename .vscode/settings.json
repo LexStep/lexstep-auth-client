@@ -1,0 +1,25 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    "dist": true
+  },
+  "cSpell.words": [
+    "basicprofile",
+    "demonyms",
+    "emailaddress",
+    "initialise",
+    "jwks",
+    "lex",
+    "lex step",
+    "lexstep",
+    "linkedin",
+    "nestjs",
+    "step",
+    "typeorm",
+    "varchar"
+  ],
+  "createTest.testFolder": "./",
+  "createTest.testFileExtension": ".spec.ts",
+  "createTest.srcFileExtension": ".ts",
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
