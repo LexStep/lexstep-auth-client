@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/antd.less'
 
 import React from 'react'
 

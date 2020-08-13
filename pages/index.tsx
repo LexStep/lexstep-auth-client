@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import React from 'react'
 
+import Example from '../features/starter/example'
+
 type StringMap = {
   [key: string]: string | undefined
 }
@@ -32,6 +34,7 @@ const Home: React.FC = () => {
             <li key={key}>{`${key}: ${variables[key]}`}</li>
           ))}
         </ul>
+        <Example />
       </main>
     </div>
   )
