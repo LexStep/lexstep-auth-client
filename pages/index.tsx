@@ -17,9 +17,9 @@ const AUTH0_CLIENT_SECRET = process.env.AUTH0_CLIENT_SECRET
 /* eslint-enable prefer-destructuring */
 
 const variables: StringMap = {
-  AUTH0_DOMAIN,
-  AUTH0_CLIENT_ID,
-  AUTH0_CLIENT_SECRET,
+  Domain: AUTH0_DOMAIN,
+  'Client ID': AUTH0_CLIENT_ID,
+  'Client Secret': AUTH0_CLIENT_SECRET,
 }
 
 const Code: React.FC = ({ children }) => <Text code>{children}</Text>
@@ -39,9 +39,9 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-        <Title>LEXSTEP.com Authorization</Title>
+        <Title level={3}>Supplied Credentials</Title>
         <Paragraph>
-          environment variables are:
+          The credentials supplied are:
           <ul>
             {Object.keys(variables).map((key) => (
               <li key={key}>
@@ -49,6 +49,8 @@ const Home: React.FC = () => {
               </li>
             ))}
           </ul>
+          If these are not as expected, please enter them in{' '}
+          <Text code>.env.local</Text>
         </Paragraph>
         <Example />
       </main>
