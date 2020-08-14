@@ -10,7 +10,7 @@ const LoginButton: React.FC = () => {
       return logout()
     }
 
-    return loginWithRedirect()
+    return loginWithRedirect({ screen_hint: 'signup' })
   }
 
   return (

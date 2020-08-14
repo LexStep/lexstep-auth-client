@@ -18,12 +18,14 @@ type StringMap = {
 const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN
 const AUTH0_CLIENT_ID = process.env.AUTH0_CLIENT_ID
 const AUTH0_CLIENT_SECRET = process.env.AUTH0_CLIENT_SECRET
+const AUTH0_AUDIENCE = process.env.AUTH0_AUDIENCE
 /* eslint-enable prefer-destructuring */
 
 const variables: StringMap = {
   Domain: AUTH0_DOMAIN,
   'Client ID': AUTH0_CLIENT_ID,
   'Client Secret': AUTH0_CLIENT_SECRET,
+  Audience: AUTH0_AUDIENCE,
 }
 
 const Credentials: React.FC = () => (
